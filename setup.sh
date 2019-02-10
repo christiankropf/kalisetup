@@ -12,3 +12,11 @@ message="Test setup script"
 
 #Setup and configuration
 echo "$message"
+
+＃ Tastaturlayout einstellen:
+dpkg-reconfigure keyboard-configuration
+＃ Zeitzone einstellen:
+dpkg-reconfigure tzdata
+＃ Zeit einstellen mit ntpdate:
+apt-get install ntpdate -y
+ntpdate ch.pool.ntp.org
