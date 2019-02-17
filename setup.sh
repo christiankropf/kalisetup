@@ -38,7 +38,31 @@ apt-get install ntpdate -y
 ntpdate ch.pool.ntp.org
 
 
-~                                                                                                                                                                                                                  
+echo "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden (Y/N):" 
+read update 
+echo $update 
+if [ $update == "Y" ] 
+        then 
+                ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+                subnet=$(/sbin/ip -o -f inet addr show | awk '/scope global/ {print $4}' | cut -d/ -f2)
+
+                 echo Aktuelle IP-Adresse:
+                 echo $ip4
+                 echo Range für Scan:
+                 range=$(echo $ip4 | sed 's/\.[0-9]*$/.0/')
+                 echo $range
+                 
+                  scanrange=$(echo $range"/"$subnet)
+                  echo Range für Scanning:
+                  echo $scanrange
+                  echo Starte Scan:
+                  nmap -n -PR -T5 $scanrange
+
+        else 
+ 
+                echo "Es weden keine Scans durchgeführt"  
+ 
+fi ~                                                                                                                                                                                                                  
 ~                                                                                                                                                                                                                  
 ~                                                                                                                                                                                                                  
 ~                                                                                                                                                                                                                  
