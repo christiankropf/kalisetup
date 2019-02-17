@@ -62,22 +62,7 @@ if [ $update == "Y" ]
  
                 echo "Es weden keine Scans durchgeführt"  
  
-fi
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
-~                                                                                                                                                                                                                  
--- VISUAL --                                                                                                                                                                           33        6,10          All
+fi                                                                                                                                                                         33        6,10          All
 
 
 
