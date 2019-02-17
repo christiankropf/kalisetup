@@ -62,7 +62,8 @@ if [ $update == "Y" ]
  
                 echo "Es weden keine Scans durchgeführt"  
  
-fi ~                                                                                                                                                                                                                  
+fi
+~                                                                                                                                                                                                                  
 ~                                                                                                                                                                                                                  
 ~                                                                                                                                                                                                                  
 ~                                                                                                                                                                                                                  
