@@ -1,17 +1,22 @@
 #!/bin/bash
 
 #################################################################################
-################### Kalisetupscript - under GPLv3            ###################
+################### Kalisetupscript - under GPLv3             ###################
 ################### by Christian Kropf                        ###################
 ################### Thanks to the community!                  ###################
 #################################################################################
 
+clear
+
+ _     _ _______        _____      _______ _______ _______ _     _  _____       _______ _______  ______ _____  _____  _______
+ |____/  |_____| |        |        |______ |______    |    |     | |_____]      |______ |       |_____/   |   |_____]    |   
+ |    \_ |     | |_____ __|__      ______| |______    |    |_____| |            ______| |_____  |    \_ __|__ |          |  
+ 
 # Variables
-message="Test setup script"
+message="Setup script Kali"
 update="N"
 
 echo "$message"
-#!/bin/bash 
 #Abfrage ob Updates durchgeführt werden sollen 
  
 echo "Sollen Updates durchgeführt werden (Y/N):" 
@@ -33,7 +38,13 @@ if [ $update == "Y" ]
                 echo Keine Updates werden durchgeführt:  
  
 fi 
- 
+
+#install tools
+echo "Default tools will be installed...
+apt-get install terminator -y
+apt-get install ipcalc -y
+apt-get install mtr -y
+
 #Setup and configuration 
 echo "Setup und configuration" 
  
