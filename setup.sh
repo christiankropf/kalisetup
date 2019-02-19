@@ -72,6 +72,10 @@ echo "Setup und configuration"
       echo "Zeit korrekt eingestellt"
       apt-get install ntpdate -y 
       ntpdate ch.pool.ntp.org
+echo "
+
+"
+
 
 #Alias setzten
 echo "Alias setzten"
