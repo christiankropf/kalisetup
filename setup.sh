@@ -11,6 +11,7 @@ echo "
 
  _     _ _______        _____      _______ _______ _______ _     _  _____       _______ _______  ______ _____  _____  _______
  |____/  |_____| |        |        |______ |______    |    |     | |_____]      |______ |       |_____/   |   |_____]    |   
+ 
  |    \_ |     | |_____ __|__      ______| |______    |    |_____| |            ______| |_____  |    \_ __|__ |          |  
    
    "
@@ -49,18 +50,22 @@ apt-get install mtr -y
 #Setup and configuration 
 echo "Setup und configuration" 
  
-#Tastaturlayout einstellen: 
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]" 
-#Zeitzone einstellen: 
-timedatectl set-timezone Europe/Zurich 
-#Zeit einstellen mit ntpdate: 
-apt-get install ntpdate -y 
-ntpdate ch.pool.ntp.org
+      #Tastaturlayout einstellen: 
+      echo "Tastataur Layout eingestellt.."
+      gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]" 
+      #Zeitzone einstellen:
+      echo "Zeitzone eingestellt"
+      timedatectl set-timezone Europe/Zurich 
+      #Zeit einstellen mit ntpdate: 
+      echo "Zeit korrekt eingestellt"
+      apt-get install ntpdate -y 
+      ntpdate ch.pool.ntp.org
+
 #Alias setzten
 alias ls='ls --color=auto'
-
 echo "alias ls='ls -la --color=auto'" >>~/.bashrc
 
+#Scan
 read -p "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden:" (y/n) :" -i y -e scan
 if [ $scan == "Y" ] 
         then 
