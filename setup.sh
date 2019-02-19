@@ -1,3 +1,11 @@
+#!/bin/bash
+
+#################################################################################
+################### Kalisetupscript - under GPLv3            ###################
+################### by Christian Kropf                        ###################
+################### Thanks to the community!                  ###################
+#################################################################################
+
 # Variables
 message="Test setup script"
 update="N"
@@ -36,6 +44,10 @@ timedatectl set-timezone Europe/Zurich
 #Zeit einstellen mit ntpdate: 
 apt-get install ntpdate -y 
 ntpdate ch.pool.ntp.org
+#Alias setzten
+alias ls='ls --color=auto'
+
+echo "alias ls='ls -la --color=auto'" >>~/.bashrc
 
 
 echo "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden (Y/N):" 
