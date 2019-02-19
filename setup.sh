@@ -11,7 +11,6 @@ echo "
 
  _     _ _______        _____      _______ _______ _______ _     _  _____       _______ _______  ______ _____  _____  _______
  |____/  |_____| |        |        |______ |______    |    |     | |_____]      |______ |       |_____/   |   |_____]    |   
- 
  |    \_ |     | |_____ __|__      ______| |______    |    |_____| |            ______| |_____  |    \_ __|__ |          |  
    
    "
@@ -21,6 +20,9 @@ message="Setup script Kali"
 update="N"
 
 echo "$message"
+echo "
+
+"
 #Abfrage ob Updates durchgeführt werden sollen 
  
 read -p "Sollen Updates durchgeführt werden (y/n) :" -i y -e update
@@ -28,7 +30,10 @@ if [ $update == "Y" ]
         then 
                 echo Updates werden durchgeführt:  
  
-                 #Inital updates & installations 
+                 #Inital updates & installations
+                 echo "
+                 
+                 "
                  apt-get update 
                  apt-get install terminator 
                  apt-get update && apt-get upgrade -y 
@@ -37,7 +42,10 @@ if [ $update == "Y" ]
                  nmap --script-updatedb 
         else 
  
-                echo Keine Updates werden durchgeführt:  
+                echo "Keine Updates werden durchgeführt
+                
+                "
+                
  
 fi 
 
@@ -46,6 +54,10 @@ echo "Default tools will be installed..."
 apt-get install terminator -y
 apt-get install ipcalc -y
 apt-get install mtr -y
+echo "
+
+"
+
 
 #Setup and configuration 
 echo "Setup und configuration" 
@@ -62,6 +74,9 @@ echo "Setup und configuration"
       ntpdate ch.pool.ntp.org
 
 #Alias setzten
+echo "Alias setzten"
+alias cls='clear'
+echo alias cls='clear' >>~/.bashrc
 alias ls='ls --color=auto'
 echo "alias ls='ls -la --color=auto'" >>~/.bashrc
 
@@ -74,15 +89,14 @@ if [ $scan == "Y" ]
 
                 echo Aktuelle IP-Adresse:
                 echo $ip4
-                 echo Range für Scan:
-                 range=$(echo $ip4 | sed 's/\.[0-9]*$/.0/')
-                 echo $range
+                echo Range für Scan:
+                range=$(echo $ip4 | sed 's/\.[0-9]*$/.0/')
+                echo $range
                  
-                  scanrange=$(echo $range"/"$subnet)
-                  echo Range für Scanning:
-                  echo $scanrange
-                  echo Starte Scan:
-                  nmap -n -PR -T5 $scanrange
+                 scanrange=$(echo $range"/"$subnet)
+                 echo "Range für Scanning:" $scanrange
+                 echo Starte Scan:
+                 nmap -n -PR -T5 $scanrange
 
         else 
                  echo "Es weden keine Scans durchgeführt"  
