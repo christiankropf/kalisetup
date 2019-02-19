@@ -66,7 +66,7 @@ alias ls='ls --color=auto'
 echo "alias ls='ls -la --color=auto'" >>~/.bashrc
 
 #Scan
-read -p "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden:" (y/n) :" -i y -e scan
+read -p "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden:(y/n):" -i y -e scan
 if [ $scan == "Y" ] 
         then 
                 ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
