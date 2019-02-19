@@ -104,7 +104,7 @@ if [ $scan == "y" ]
 				 if [ $audit == "y" ]
 					then
 						git clone https://github.com/OCSAF/freevulnaudit.git
-						nmap -n --script freevulnaudit -PR -T5 $scanrange
+						nmap -n --script freevulnaudit/freevulnaudit.sh -PR -T5 $scanrange
 					else
 					nmap -n -PR -T5 $scanrange
 				fi
