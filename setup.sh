@@ -25,8 +25,8 @@ echo "
 "
 #Abfrage ob Updates durchgeführt werden sollen 
  
-read -p "Sollen Updates durchgeführt werden (y/n) :" -i y -e update
-if [ $update == "Y" ] 
+read -p "Sollen Updates durchgeführt werden (y/n) :" -i n -e update
+if [ $update == "y" ] 
         then 
                 echo Updates werden durchgeführt:  
  
@@ -82,7 +82,7 @@ echo "alias ls='ls -la --color=auto'" >>~/.bashrc
 
 #Scan
 read -p "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden:(y/n):" -i y -e scan
-if [ $scan == "Y" ] 
+if [ $scan == "y" ] 
         then 
                 ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
                 subnet=$(/sbin/ip -o -f inet addr show | awk '/scope global/ {print $4}' | cut -d/ -f2)
