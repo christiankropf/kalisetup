@@ -43,7 +43,7 @@ if [ $update == "Y" ]
 fi 
 
 #install tools
-echo "Default tools will be installed...
+echo "Default tools will be installed..."
 apt-get install terminator -y
 apt-get install ipcalc -y
 apt-get install mtr -y
