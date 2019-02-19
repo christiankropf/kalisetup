@@ -101,7 +101,7 @@ if [ $scan == "y" ]
                  echo "Range für Scanning:" $scanrangea
                  echo Starte Scan:
 				 read -p "Soll gleich ein Audit durchgeführt werden? :(y/n):" -i y -e audit
-				 if [ $audit == "y"]
+				 if [ $audit == "y" ]
 					then
 						git clone https://github.com/OCSAF/freevulnaudit.git
 						nmap -n --script freevulnaudit -PR -T5 $scanrange
