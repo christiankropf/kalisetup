@@ -98,9 +98,16 @@ if [ $scan == "y" ]
                 echo $range
                  
                  scanrange=$(echo $range"/"$subnet)
-                 echo "Range für Scanning:" $scanrange
+                 echo "Range für Scanning:" $scanrangea
                  echo Starte Scan:
-                 nmap -n -PR -T5 $scanrange
+				 read -p "Soll gleich ein Audit durchgeführt werden? :(y/n):" -i y -e audit
+				 if [ $audit == "y"]
+					then
+						git clone https://github.com/OCSAF/freevulnaudit.git
+						nmap -n --script freevulnaudit -PR -T5 $scanrange
+					else
+					nmap -n -PR -T5 $scanrange
+				fi
 
         else 
                  echo "Es weden keine Scans durchgeführt"  
