@@ -54,10 +54,18 @@ echo "Default tools will be installed..."
 apt-get install terminator -y
 apt-get install ipcalc -y
 apt-get install mtr -y
-echo "
+apt-get install tor
+#freevulnsearch
+apt-get install geoip-bin
+apt-get install jq -y
+#freevulnaudit
+apt-get install xlstproc
+apt-get install wkhtmltopdf
 
+echo "
 "
 
+"
 
 #Setup and configuration 
 echo "Setup und configuration" 
@@ -72,6 +80,8 @@ echo "Setup und configuration"
       echo "Zeit korrekt eingestellt"
       apt-get install ntpdate -y 
       ntpdate ch.pool.ntp.org
+      #DNS auf Google umstellen
+      echo nameserver 8.8.8.8 > /etc/resolv.conf
 echo "
 
 "
@@ -83,6 +93,8 @@ alias cls='clear'
 echo alias cls='clear' >>~/.bashrc
 alias ls='ls --color=auto'
 echo "alias ls='ls -la --color=auto'" >>~/.bashrc
+alias cd..='cd ..'
+echo "alias cd..='cd ..'" >>~/.bashrc
 
 #Scan
 read -p "Sollen ein nmap Scan des lokalen Subnetz durchgeführt werden:(y/n):" -i y -e scan
@@ -103,9 +115,11 @@ if [ $scan == "y" ]
 				 read -p "Soll gleich ein Audit durchgeführt werden? :(y/n):" -i y -e audit
 				 if [ $audit == "y" ]
 					then
-						git clone https://github.com/OCSAF/freevulnaudit.git
+						#git clone https://github.com/OCSAF/freevulnaudit.git
+						#cp freevulnsearch.nse /usr/share/nmap/scripts
 						git clone https://github.com/OCSAF/freevulnsearch.git
-						nmap -n --script ~/kalisetup/freevulnsearch/freevulnsearch.nse -PR -T5 $scanrange
+						cp freevulnsearch/freevulnsearch.nse ./
+						nmap -n -Pn -sV -p- --script freevulnsearch $scanrange
 					else
 					nmap -n -PR -T5 $scanrange
 				fi
