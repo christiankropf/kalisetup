@@ -71,8 +71,7 @@ echo "Setup und configuration"
  
       #Tastaturlayout einstellen: 
       echo "Tastataur Layout eingestellt.."
-      gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]" 
-      
+      #gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]" 
       #Zeitzone einstellen:
       echo "Zeitzone eingestellt"
       timedatectl set-timezone Europe/Zurich 
