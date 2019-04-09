@@ -1,44 +1,3 @@
-Skip to content
-
- 
-  
-Pull requests 
-Issues 
-Marketplace 
-Explore 
- 
- 
- 
-
-
- Watch 
-0 
- Star 
-0 
- Fork 
-0 
-
-christiankropf/kalisetup 
- Code 
- Issues 0 
- Pull requests 0 
- Projects 0 
- Wiki 
- Insights 
- Settings 
-Branch: master 
-kalisetup/setup.sh 
-Find file 
-Copy path 
- christiankropf Update setup.sh 
-684c3a5 2 minutes ago 
-1 contributor 
-130 lines (102 sloc) 4 KB 
-Raw
-Blame
-History
-   
-
 #!/bin/bash
 
 
@@ -286,4 +245,4 @@ if [ $scan == "y" ]
 
  
 
-fi                                                                                                                                                                        
+fi                                                                                                                                                                  
