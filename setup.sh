@@ -230,7 +230,7 @@ if [ $scan == "y" ]
 
 					else
 
-					nmap -sV --script freevulnsearch 10.0.2.11 $scanrange
+						nmap -sV --script ~/freevulnsearch $scanrange
 
 				fi
 
