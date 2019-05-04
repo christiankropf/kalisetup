@@ -57,8 +57,8 @@ while getopts "uctshc" opt; do
   	done
 	shift $(( OPTIND - 1 ))
 
-#Check if opt_arg1 or opt_arg2 is set
-if [ "$opt_arg1" == "" ] && [ "$opt_arg2" == "" ]; then
+#Check if opt_arg1 or opt_arg2 or opt_arg3 or opt_arg4 is set
+if [ "$opt_arg1" == "" ] && [ "$opt_arg2" == "" ] && [ "$opt_arg3" == "" ] && [ "$opt_arg4" == "" ]; then
 	echo "**No argument set**"
 	echo ""
 	usage
@@ -215,17 +215,14 @@ if [ "$opt_arg1" == "1" ]; then
 	unset update
 	echo ""
 elif [ "$opt_arg2" == "1" ]; then
-	while read line
 	funcConfig 
 	unset dns
 	echo ""
 elif [ "$opt_arg3" == "1" ]; then
-	while read line
 	funcTools 
 	unset toolsinstall
 	echo ""
 elif [ "$opt_arg4" == "1" ]; then
-	while read line
 	funcScan 
 	unset scan
 	unset ip4   	
