@@ -215,12 +215,9 @@ if [ "$opt_arg1" == "1" ]; then
 	unset update
 	echo "Updates abgeschlossen"
 elif [ "$opt_arg2" == "1" ]; then
-	while read line
-	do
 		funcConfig 
 		unset dns
 		echo "Konfiguration abgeschlossen"
-	done <$list
 elif [ "$opt_arg3" == "1" ]; then
 	funcTools 
 	unset toolsinstall
