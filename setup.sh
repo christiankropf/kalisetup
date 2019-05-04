@@ -92,7 +92,7 @@ funcUpdate() {
 
 	read -p "Sollen Updates durchgeführt werden (y/n) :" -i n -e update
 
-if [ $update == "y" ] 
+	if [ $update == "y" ] 
 
         then 
                 echo Updates werden durchgeführt:  
@@ -108,7 +108,7 @@ if [ $update == "y" ]
         else 
                 echo "Keine Updates werden durchgeführt
 				"
-fi 
+	fi 
 }
 
 # My function for making my default kali config
@@ -148,7 +148,7 @@ funcTools() {
 	
 	read -p "Sollen Tools insalliert werden (y/n) :" -i n -e toolsinstall
 
-if [ $toolsinstall == "y" ] 
+	if [ $toolsinstall == "y" ] 
 
         then 
                 echo Updates werden durchgeführt:  
@@ -169,7 +169,7 @@ if [ $toolsinstall == "y" ]
         else 
                 echo "Es werden keine Tools installiert.."
 				
-fi 
+	fi 
 }
 
 # My function for reading the current ip and subnet f doing a scan with OCSAF freevulnsearch
@@ -199,7 +199,7 @@ funcScan() {
 			nmap -sV --script ~/freevulnsearch $scanrange
 		else 
                  echo "Es weden keine Scans durchgeführt"  
-fi  
+	fi  
 }
 
 ####### MAIN PROGRAM #######
@@ -213,15 +213,18 @@ echo ""
 if [ "$opt_arg1" == "1" ]; then
 	funcUpdate
 	unset update
-	echo ""
+	echo "Updates abgeschlossen"
 elif [ "$opt_arg2" == "1" ]; then
-	funcConfig 
-	unset dns
-	echo ""
+	while read line
+	do
+		funcConfig 
+		unset dns
+		echo "Konfiguration abgeschlossen"
+	done <$list
 elif [ "$opt_arg3" == "1" ]; then
 	funcTools 
 	unset toolsinstall
-	echo ""
+	echo "Tool Installation abgeschlossen"
 elif [ "$opt_arg4" == "1" ]; then
 	funcScan 
 	unset scan
@@ -229,7 +232,7 @@ elif [ "$opt_arg4" == "1" ]; then
 	unset subnet
 	unset range
 	unset scanrange
-	echo ""	
+	echo "Scan wurde durchgeführt"	
 fi
 
 ################### END ###################
