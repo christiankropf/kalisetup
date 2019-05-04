@@ -6,11 +6,12 @@
 ################### BETA Version                              ###################
 #################################################################################
 
-#####################################################################
+#################################################################################
 #  INFORMATIONS                                           			#
 #   This script sets my preffered default config to kali 			#
-#   and installs my favorite tools and programs          			#
-#####################################################################
+#   and installs my favorite tools and programs and give me			#
+#	the option to scan the local network with OCSAF freevulnsearch		#
+#################################################################################
 
 
 ###############################
@@ -28,10 +29,10 @@ usage() {
        	echo ""	
 	echo "OPTIONS:"
 	echo "  -h, help - this beautiful text"
-	echo "  -u <argument1> - update Kali"
-	echo "  -c <argument2> - set my default config"
-	echo "  -t <argument3> - install my tools"
-	echo "  -s <argument4> - make a scan in the current subnet with OCSAF"
+	echo "  -u, update Kali"
+	echo "  -c, set my default config"
+	echo "  -t, install my tools"
+	echo "  -s, make a scan in the current subnet with OCSAF"
 	echo "  -c, no color scheme set"
        	echo ""
 	
