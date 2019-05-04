@@ -24,7 +24,7 @@ usage() {
        	echo ""	
 	echo "USAGE:" 
 	echo "  ./setup.sh"
-       	echo "  ./setup.sh -u <argument2>"	
+       	echo "  ./setup.sh -u"	
        	echo ""	
 	echo "OPTIONS:"
 	echo "  -h, help - this beautiful text"
@@ -42,13 +42,13 @@ usage() {
 ### GETOPTS - TOOL OPTIONS  ###
 ###############################
 
-while getopts "m:l:hc" opt; do
+while getopts "uctshc" opt; do
 	case ${opt} in
 		h) usage; exit 1;;
 		u) input1="$OPTARG"; opt_arg1=1;;
 		c) input2="$OPTARG"; opt_arg2=1;;
-		t) input2="$OPTARG"; opt_arg3=1;;
-		s) input2="$OPTARG"; opt_arg4=1;;		
+		t) input3="$OPTARG"; opt_arg3=1;;
+		s) input4="$OPTARG"; opt_arg4=1;;		
 		c) nocolor=1;;
 		\?) echo "**Unknown option**" >&2; echo ""; usage; exit 1;;
         	:) echo "**Missing option argument**" >&2; echo ""; usage; exit 1;;
