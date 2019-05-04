@@ -6,12 +6,12 @@
 ################### BETA Version                              ###################
 #################################################################################
 
-#################################################################################
+#####################################################################
 #  INFORMATIONS                                           			#
 #   This script sets my preffered default config to kali 			#
 #   and installs my favorite tools and programs and give me			#
-#	the option to scan the local network with OCSAF freevulnsearch		#
-#################################################################################
+#	the option to scan the local network with OCSAF freevulnsearch	#
+#####################################################################
 
 
 ###############################
@@ -223,6 +223,7 @@ elif [ "$opt_arg3" == "1" ]; then
 	funcTools 
 	unset toolsinstall
 	echo "Tool Installation abgeschlossen"
+	echo $opt_arg4
 elif [ "$opt_arg4" == "1" ]; then
 	funcScan 
 	unset scan
