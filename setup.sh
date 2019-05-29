@@ -87,11 +87,11 @@ fi
 
 
 funcUpdate() {
-
-###############################
-###     Updating Kali	    ###
-###############################
-
+echo ""
+echo "###############################"
+echo "###     Updating Kali	  ###"
+echo "###############################"
+echo ""
 	local update   #Installing updates Y/N
 	
 
@@ -119,11 +119,11 @@ funcUpdate() {
 # My function for making my default kali config
 
 funcConfig() {
-
-###############################
-###     Set Config 	    ###
-###############################
-	
+echo ""
+echo "###############################"
+echo "###     Set Config 	  ###"
+echo "###############################"
+echo ""	
 	local dns   #DNS-Server
 	
 	read -p "Welcher DNS soll gesetzt werden :" -i 8.8.8.8 -e dns
@@ -152,11 +152,11 @@ funcConfig() {
 # My function for installing my tools
 
 funcTools() {
-
-###############################
-###     Installing tools    ###
-###############################
-
+echo ""
+echo "###############################"
+echo "###     Installing tools    ###"
+echo "###############################"
+echo ""
 	local toolsinstall   #Installing Tools Y/N
 	
 	read -p "Sollen Tools insalliert werden (y/n) :" -i n -e toolsinstall
@@ -188,11 +188,11 @@ funcTools() {
 # My function for reading the current ip and subnet f doing a scan with OCSAF freevulnsearch
 
 funcScan() {
-
-###############################
-###     OCSAF Scan          ###
-###############################
-
+echo ""
+echo "###############################"
+echo "###     OCSAF Scan          ###"
+echo "###############################"
+echo ""
 	local scan 	#scan Y/N
 	local ip4   	#IP-Adress
 	local subnet 	#cut out of inet ip inet address show
