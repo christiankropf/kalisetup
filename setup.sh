@@ -6,12 +6,12 @@
 ################### BETA Version                              ###################
 #################################################################################
 
-#####################################################################
+#################################################################################
 #  INFORMATIONS                                           			#
 #   This script sets my preffered default config to kali 			#
 #   and installs my favorite tools and programs and give me			#
-#	the option to scan the local network with OCSAF freevulnsearch	#
-#####################################################################
+#	the option to scan the local network with OCSAF freevulnsearch 	        #
+#################################################################################
 
 
 ###############################
@@ -85,6 +85,7 @@ fi
 ################### functions ####################
 
 
+# My function for Updating Kali
 
 funcUpdate() {
 echo ""
@@ -127,17 +128,24 @@ echo ""
 	local dns   #DNS-Server
 	
 	read -p "Welcher DNS soll gesetzt werden :" -i 8.8.8.8 -e dns
-	echo "Tastataur Layout eingestellt.."
+	
+	#DNS umstellen
+   	echo nameserver $dns > /etc/resolv.conf
+	
+	#Tastatur Layout eingestellt
 	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'ch')]" 
+	echo "Tastataur Layout eingestellt.."
+	
 	#Zeitzone einstellen:
-	echo "Zeitzone eingestellt"
-    timedatectl set-timezone Europe/Zurich 
-    #Zeit einstellen mit ntpdate: 
-	echo "Zeit korrekt eingestellt"
-    apt-get install ntpdate -y 
-    ntpdate ch.pool.ntp.org
-    #DNS auf Google umstellen
-    echo nameserver $dns > /etc/resolv.conf
+	timedatectl set-timezone Europe/Zurich 
+   	echo "Zeitzone eingestellt"
+	
+	#Zeit einstellen mit ntpdate: 
+	apt-get install ntpdate -y 
+   	ntpdate ch.pool.ntp.org
+   	echo "Zeit korrekt eingestellt"
+	
+	
 	#Alias setzten
 	echo "Alias setzten"
 	alias cls='clear'
@@ -148,6 +156,7 @@ echo ""
 	echo "alias cd..='cd ..'" >>~/.bashrc
 
 }
+
 
 # My function for installing my tools
 
