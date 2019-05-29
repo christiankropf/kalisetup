@@ -213,7 +213,7 @@ echo ""
             echo Starte Scan:
 			git clone https://github.com/OCSAF/freevulnsearch.git
 			cp freevulnsearch/freevulnsearch.nse ./
-			nmap -sV --script ~/freevulnsearch $scanrange
+			nmap -sV --script ./freevulnsearch $scanrange
 		else 
                  echo "Es weden keine Scans durchgeführt"  
 	fi  
