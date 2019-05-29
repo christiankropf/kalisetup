@@ -84,10 +84,14 @@ fi
 
 ################### functions ####################
 
-# My function for Updating Kali
+
 
 funcUpdate() {
-	
+
+###############################
+###     Updating Kali	    ###
+###############################
+
 	local update   #Installing updates Y/N
 	
 
@@ -115,6 +119,10 @@ funcUpdate() {
 # My function for making my default kali config
 
 funcConfig() {
+
+###############################
+###     Set Config 	    ###
+###############################
 	
 	local dns   #DNS-Server
 	
@@ -144,6 +152,10 @@ funcConfig() {
 # My function for installing my tools
 
 funcTools() {
+
+###############################
+###     Installing tools    ###
+###############################
 
 	local toolsinstall   #Installing Tools Y/N
 	
@@ -177,7 +189,11 @@ funcTools() {
 
 funcScan() {
 
-	local scan 		#scan Y/N
+###############################
+###     OCSAF Scan          ###
+###############################
+
+	local scan 	#scan Y/N
 	local ip4   	#IP-Adress
 	local subnet 	#cut out of inet ip inet address show
 	local range 	#Range for Scanning out of IP and Subnet
@@ -206,9 +222,9 @@ funcScan() {
 ####### MAIN PROGRAM #######
 
 echo ""
-echo "######################"
-echo "####  Kali-Setup  ####"
-echo "######################"
+echo "############################"
+echo "####  Kali-Setup Script ####"
+echo "############################"
 echo ""
 
 if [ "$opt_arg1" == "1" ]; then
