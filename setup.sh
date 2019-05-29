@@ -215,16 +215,19 @@ if [ "$opt_arg1" == "1" ]; then
 	funcUpdate
 	unset update
 	echo "Updates abgeschlossen"
-elif [ "$opt_arg2" == "1" ]; then
+fi
+if [ "$opt_arg2" == "1" ]; then
 		funcConfig 
 		unset dns
 		echo "Konfiguration abgeschlossen"
-elif [ "$opt_arg3" == "1" ]; then
+fi
+if [ "$opt_arg3" == "1" ]; then
 	funcTools 
 	unset toolsinstall
 	echo "Tool Installation abgeschlossen"
 	echo $opt_arg4
-elif [ "$opt_arg4" == "1" ]; then
+fi
+if [ "$opt_arg4" == "1" ]; then
 	funcScan 
 	unset scan
 	unset ip4   	
